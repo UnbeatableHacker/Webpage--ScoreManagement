@@ -1,0 +1,26 @@
+﻿1. allClasses.js包括：
+    1) 新建的student数组: stuArr
+    2) 新建的Student对象: Student(stuId, stuName, stuSex, stuBirthday)
+    3) 新建的subject数组: subArr
+    4) 新建的Subject对象: Subject(subId, subName)
+    5) 新建的grade数组: scoreArr
+    6) 新建的Score对象: Score(grade, scoreId, testDate, subId, stuId)
+
+2. addStudent.js包括:
+    1) 显示、关闭添加学生的div: showAddStudentsDiv()
+    2) 添加学生: addStudent()
+
+3. addSubject.js包括:
+    1) 显示、关闭添加学科的div: showAddSubjectDiv()
+    2） 添加学科: addSubject()
+
+4. addGrade.js包括:
+    1) 显示、关闭添加成绩div: showAddGradeDiv()
+    2) 显示所选id对应的名称: showStuName()
+    3) 添加成绩: addGrade()
+
+5. showGrade.js包括:（出现新问题）
+    1) 显示、关闭显示所有成绩的div: showAllGradeDiv()
+    2) 到所有成绩:  getAllGrade()
+    3) 更改信息：未完成：修改成绩未完成(思路出错)
+    4) 删除某条信息： deleteScore()

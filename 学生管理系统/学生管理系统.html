@@ -1,0 +1,145 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生管理系统</title>
+    <script src="jquery.js"></script>
+    <script src="allClasses.js"></script>
+    <script src="addStudent.js"></script>
+    <script src="addSubject.js"></script>
+    <script src="addGrade.js"></script>
+    <script src="showGrade.js"></script>
+    <style>
+        .divCss{
+            border: 1px solid;
+            width: 270px;
+        }
+        .divCss2{
+            border: 1px solid;
+            width: 36%;
+        }
+    </style>
+</head>
+<body>
+    <!--布局-->
+    <div><img src="背景.jpg" style="height: 250px; width: 100%"></div>
+    <button onclick="showAddStudentsDiv($('#newStudent'))">添加新学生</button> &nbsp;
+    <button onclick="showAddSubjectDiv($('#newSubject'))">添加新学科</button> &nbsp;
+    <button onclick="showAddGradeDiv($('#newGrade'))">添加新成绩</button> &nbsp;
+    <button onclick="showAllGradeDiv($('#allGrade'))">查看学生成绩</button>
+
+    <!--添加新学生-->
+    <div style="display: none" id="newStudent" class="divCss">
+        <table>
+            <tr>
+                <td>学生学号:</td>
+                <td><input type="text" readonly></td>
+            </tr>
+            <tr>
+                <td>学生姓名:</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>学生性别:</td>
+                <td>
+                    <input type="radio" name="sex">男
+                    <input type="radio" name="sex">女
+                </td>
+            </tr>
+            <tr>
+                <td>学生生日:</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" onclick="addStudent(this.parentNode.parentNode.parentNode)" value="提交">
+                    <input type="button" onclick="showAddStudentsDiv($('#newStudent'))" value="取消">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!--添加新学科-->
+    <div style="display: none" id="newSubject" class="divCss">
+        <table>
+            <tr>
+                <td>学科编号:</td>
+                <td><input type="text" readonly></td>
+            </tr>
+            <tr>
+                <td>学科名称:</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" onclick="addSubject(this.parentNode.parentNode.parentNode)" value="确定">
+                    <input type="button" onclick="showAddGradeDiv($('#newSubject'))" value="取消">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!--添加新成绩-->
+    <div style="display: none" id="newGrade" class="divCss">
+        <table>
+            <tr>
+                <td>操作序号:</td>
+                <td><input type="text" readonly></td>
+            </tr>
+            <tr>
+                <td>学生学号:</td>
+                <td>
+                    <select onchange="showStuName(this.value, $('#newGrade'))">
+                        <option value="">请选择学生学号</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>学生姓名:</td>
+                <td><input type="text" readonly></td>
+            </tr>
+            <tr>
+                <td>课程号:</td>
+                <td>
+                    <select onchange="showSubName(this.value, $('#newGrade'))">
+                        <option value="">请选择课程号</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>课程名:</td>
+                <td><input type="text" readonly></td>
+            </tr>
+            <tr>
+                <td>成 绩:</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>考试时间:</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" onclick="addGrade(this.parentNode.parentNode.parentNode)" value="提交">
+                    <input type="button" onclick="showAddGradeDiv($('#newGrade'))" value="取消">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!--成绩查询-->
+    <div style="display: none" id="allGrade" class="divCss2">
+        <table border="1">
+            <tr>
+                <td>序号</td>
+                <td>成绩编号</td>
+                <td>学生学号</td>
+                <td>学生姓名</td>
+                <td>课程编号</td>
+                <td>课程名称</td>
+                <td>成绩</td>
+                <td>其他</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
