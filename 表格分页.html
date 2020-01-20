@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格分页</title>
+    <script src="jquery.js"></script>
+    <script src="function.js"></script>
+    <script type="text/javascript">
+
+    </script>
+</head>
+<body>
+    <table  id="employeeInfoTable" border="1">
+        <tr><td>序号</td><td>员工编号</td><td>员工姓名</td><td>员工年龄</td><td>员工性别</td><td>家庭住址</td></tr>
+    </table>
+    <button onclick="backPage()">上一页</button>
+    <button onclick="nextPage()">下一页</button>
+    <select onchange="goPage(this.value)" id="goPage"></select>
+</body>
+</html>
